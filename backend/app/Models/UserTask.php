@@ -12,13 +12,13 @@ class UserTask extends Model
     protected $guarded = [];
 
     
-    public function users()
+    public function user()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsTo(User::class);
     }
     
-    public function tasks()
+    public function task()
     {
-        return $this->belongsToMany(Task::class);
+        return $this->belongsTo(Task::class);
     }
 }

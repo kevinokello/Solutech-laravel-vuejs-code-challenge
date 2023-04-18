@@ -2,7 +2,7 @@
 import { reactive } from "vue";
 import useStatuses from "../../composables/statuses";
 
-const { storeStatus, errors } = useStatus();
+const { storeStatus, errors } = useStatuses();
 
 const form = reactive({
   name: "",

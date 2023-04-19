@@ -1,18 +1,23 @@
 <script setup>
-import { reactive } from "vue";
-import useStatuses from "../../composables/statuses";
+import useTasks from "../../composables/tasks";
+import { onMounted } from "vue";
 
-const { storeStatus, errors } = useStatuses();
+const { task, getTask, updateTask, errors } = useTasks();
 
-const form = reactive({
-  name: "",
+const props = defineProps({
+  id: {
+    required: true,
+    type: String,
+  },
 });
+
+onMounted(() => getTask(props.id));
 </script>
 <template>
   <div class="mt-12">
     <form
       class="max-w-md mx-auto p-4 bg-white shadow-md rounded-md"
-      @submit.prevent="storeStatus(form)"
+      @submit.prevent="updateTask($route.params.id)"
     >
       <div class="space-y-6">
         <div class="mb-6">
@@ -31,7 +36,7 @@ const form = reactive({
           <input
             type="text"
             id="name"
-            v-model="form.name"
+            v-model="task.name"
             class="
               bg-gray-50
               border border-gray-300
@@ -53,20 +58,20 @@ const form = reactive({
             <span class="text-sm text-red-400">{{ errors.name[0] }}</span>
           </div>
         </div>
-        
+       
         <div class="mt-4">
           <button
             type="submit"
             class="
-                  px-4
-                  py-2
-                  bg-green-500
-                  hover:bg-green-700
-                  text-white
-                  rounded
-                "
+              px-4
+              py-2
+              bg-indigo-500
+              hover:bg-indigo-700
+              text-white
+              rounded
+            "
           >
-            Submit
+            Update
           </button>
         </div>
       </div>

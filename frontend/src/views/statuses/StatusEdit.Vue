@@ -63,13 +63,13 @@ onMounted(() => getStatus(props.id));
           <button
             type="submit"
             class="
-              px-4
-              py-2
-              bg-indigo-500
-              hover:bg-indigo-700
-              text-white
-              rounded
-            "
+                  px-4
+                  py-2
+                  bg-green-500
+                  hover:bg-green-700
+                  text-white
+                  rounded
+                "
           >
             Update
           </button>

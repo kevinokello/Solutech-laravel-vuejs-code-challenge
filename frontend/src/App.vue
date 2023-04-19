@@ -16,6 +16,16 @@ import { RouterLink, RouterView } from "vue-router";
           to="/statuses"
           >Statuses</RouterLink
         >
+        <RouterLink
+          class="px-4 py-2 mr-4 bg-green-600 hover:bg-green-800 rounded text-white"
+          to="/tasks"
+          >Tasks</RouterLink
+        >
+        <RouterLink
+          class="px-4 py-2 mr-4 bg-green-600 hover:bg-green-800 rounded text-white"
+          to="/tasks"
+          >UserTasks</RouterLink
+        >
       </nav>
     </div>
   </header>
